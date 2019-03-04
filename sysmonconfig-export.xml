@@ -342,6 +342,10 @@
 			<DestinationPort condition="is">22</DestinationPort> <!--SSH protocol, monitor admin connections-->
 			<DestinationPort condition="is">23</DestinationPort> <!--Telnet protocol, monitor admin connections, insecure-->
 			<DestinationPort condition="is">25</DestinationPort> <!--SMTP mail protocol port, insecure, used by threats-->
+			<DestinationPort condition="is">53</DestinationPort> <!-- DNS protocol can be used for C2 or data exfiltration-->
+			<DestinationPort condition="is">80</DestinationPort> <!-- HTTP used for payload download and C2, possible data exfiltration-->
+			<DestinationPort condition="is">443</DestinationPort> <!-- HTTPS also used for payload download and C2, possible data exfiltration-->
+			<DestinationPort condition="is">8443</DestinationPort> <!-- HTTPS alternate also used for payload download and C2, possible data exfiltration-->
 			<DestinationPort condition="is">142</DestinationPort> <!--IMAP mail protocol port, insecure, used by threats-->
 			<DestinationPort condition="is">3389</DestinationPort> <!--Microsoft:Windows:RDP: Monitor admin connections-->
 			<DestinationPort condition="is">5800</DestinationPort> <!--VNC protocol: Monitor admin connections, often insecure-->
@@ -349,6 +353,7 @@
 			<!--Ports: Proxy-->
 			<DestinationPort condition="is">1080</DestinationPort> <!--Socks proxy port | Credit @ion-storm-->
 			<DestinationPort condition="is">3128</DestinationPort> <!--Socks proxy port | Credit @ion-storm-->
+			<DestinationPort condition="is">8000</DestinationPort> <!--Socks proxy port -->
 			<DestinationPort condition="is">8080</DestinationPort> <!--Socks proxy port | Credit @ion-storm-->
 			<!--Ports: Tor-->
 			<DestinationPort condition="is">1723</DestinationPort> <!--Tor protocol [ https://attack.mitre.org/wiki/Technique/T1090 ] | Credit @ion-storm-->
